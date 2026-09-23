@@ -11,7 +11,7 @@
 
 也可以直接在 GitHub 网页中打开 `content/logs`，使用 **Add file → Create new file** 新建 Markdown 文件，提交后自动发布。
 
-不要直接修改 `dist/` 中的网页；它们会在构建时重新生成。
+不要直接修改 `dist/` 中的网页；它们会在构建时重新生成。`dist/` 已被 Git 忽略，GitHub Actions 会在每次部署时根据源文件重新构建它，因此不需要提交生成结果。
 
 ## 更新首页进度
 
@@ -65,7 +65,7 @@ assets/
   style.css             网站样式
   site.js               深浅色主题切换
 build.py                静态网站生成器
-dist/                   构建好的网页
+dist/                   本地生成的网页（不纳入版本控制）
 .github/workflows/      GitHub Pages 自动发布
 ```
 
