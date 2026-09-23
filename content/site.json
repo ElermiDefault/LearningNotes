@@ -2,8 +2,18 @@
   "title": "研习手记",
   "owner": "Yifei",
   "description": "医学影像、多模态学习与计算生物学的学习记录。",
-  "current_focus": "MedMNIST：医学图像分类入门",
-  "current_note": "先完成一个可复现的二维医学图像分类实验，再进入三维医学影像。",
+  "hero_eyebrow": "ELERMI的学习笔记",
+  "current_focus": "BioMedical 深度学习笔记",
+  "current_note": "正在学习和记录...",
+  "summary_quote": "伟大的作品靠的不是力量，而是靠着坚持来完成的。",
+  "summary_items": [
+    "每天都学一点",
+    "你的努力总能有回报的",
+    "转码之路...",
+    "今日状态: 缓慢推进中"
+  ],
+  "roadmap_note": "一步一步慢慢完成...",
+  "footer_text": "©️copyright at ElermiDefault",
   "milestones": [
     {
       "title": "医学图像分类",

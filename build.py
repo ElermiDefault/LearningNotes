@@ -123,6 +123,7 @@ def page_template(site: dict, title: str, content: str, path_prefix: str = "", c
     site_title = html.escape(site["title"])
     page_title = site_title if title == site["title"] else f"{html.escape(title)} · {site_title}"
     description = html.escape(site["description"], quote=True)
+    footer_text = html.escape(site.get("footer_text", f"{site['title']} · 持续记录，定期复盘"))
     favicon = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%232563eb'/%3E%3Cpath d='M18 17h22a8 8 0 0 1 8 8v22H26a8 8 0 0 1-8-8V17Z' fill='none' stroke='white' stroke-width='5'/%3E%3Cpath d='M27 28h13M27 37h9' stroke='white' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E"
 
     def nav_link(label: str, href: str, key: str) -> str:
@@ -157,7 +158,7 @@ def page_template(site: dict, title: str, content: str, path_prefix: str = "", c
   </header>
   <main id="main">{content}</main>
   <footer class="site-footer">
-    <div class="footer-inner"><span>{site_title} · 持续记录，定期复盘</span><span>最后构建：{dt.date.today().isoformat()}</span></div>
+    <div class="footer-inner"><span>{footer_text}</span><span>最后构建：{dt.date.today().isoformat()}</span></div>
   </footer>
   <script src="{path_prefix}assets/site.js"></script>
 </body>
@@ -213,10 +214,6 @@ def build() -> None:
     shutil.copy2(ASSETS / "site.js", DIST / "assets" / "site.js")
     (DIST / ".nojekyll").write_text("", encoding="utf-8")
 
-    done_count = sum(item["status"] == "done" for item in site["milestones"])
-    active_count = sum(item["status"] == "current" for item in site["milestones"])
-    total = len(site["milestones"])
-    progress = round((done_count + 0.5 * active_count) / total * 100) if total else 0
     hours = sum(item["hours_value"] for item in logs)
     hours_label = f"{hours:g}"
 
@@ -230,26 +227,27 @@ def build() -> None:
         for index, item in enumerate(site["milestones"], start=1)
     )
     recent = "\n".join(log_card(entry) for entry in logs[:4]) or '<div class="panel empty-state">第一篇学习记录会出现在这里。</div>'
+    summary_items = "\n".join(
+        f'<div class="aside-extra"><span class="dot"></span>{html.escape(item)}</div>'
+        for item in site.get("summary_items", [])
+    )
 
     home = f"""<div class="page-shell">
   <section class="dashboard-grid" aria-labelledby="current-focus">
     <div class="panel focus-panel">
       <div class="focus-copy">
-        <p class="eyebrow">Current focus</p>
+        <p class="eyebrow">{html.escape(site.get('hero_eyebrow', 'Current focus'))}</p>
         <h1 id="current-focus">{html.escape(site['current_focus'])}</h1>
         <p class="focus-note">{html.escape(site['current_note'])}</p>
       </div>
     </div>
     <aside class="panel summary-panel" aria-label="学习概览">
-      <div class="progress-ring" style="--progress: {progress}%"><strong>{progress}%</strong><span>路线进度</span></div>
-      <div class="summary-stats">
-        <div class="stat"><strong>{len(logs)}</strong><span>学习记录</span></div>
-        <div class="stat"><strong>{hours_label}</strong><span>记录小时</span></div>
-      </div>
+      <div class="summary-item">{html.escape(site.get('summary_quote', ''))}</div>
+      {summary_items}
     </aside>
   </section>
   <section class="section" aria-labelledby="roadmap-heading">
-    <div class="section-heading"><div><h2 id="roadmap-heading">学习路线</h2><p>按成果推进，不按日期赶进度。</p></div><a class="text-link" href="roadmap/index.html">查看说明 →</a></div>
+    <div class="section-heading"><div><h2 id="roadmap-heading">学习路线</h2><p>{html.escape(site.get('roadmap_note', '按成果推进，不按日期赶进度。'))}</p></div><a class="text-link" href="roadmap/index.html">查看说明 →</a></div>
     <div class="roadmap-list">{roadmap_cards}</div>
   </section>
   <section class="section" aria-labelledby="recent-heading">

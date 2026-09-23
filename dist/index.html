@@ -1,155 +1,98 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="医学影像、多模态学习与计算生物学的学习记录。"
-    />
-    <meta name="color-scheme" content="light dark" />
-    <title>研习手记</title>
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%232563eb'/%3E%3Cpath d='M18 17h22a8 8 0 0 1 8 8v22H26a8 8 0 0 1-8-8V17Z' fill='none' stroke='white' stroke-width='5'/%3E%3Cpath d='M27 28h13M27 37h9' stroke='white' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E"
-    />
-    <link rel="stylesheet" href="assets/style.css" />
-  </head>
-  <body>
-    <a class="skip-link" href="#main">跳到正文</a>
-    <header class="site-header">
-      <nav class="nav" aria-label="主导航">
-        <a class="brand" href="index.html"
-          ><span class="brand-mark">记</span><span>研习手记</span></a
-        >
-        <div class="nav-actions">
-          <div class="nav-links">
-            <a href="index.html" aria-current="page">首页</a>
-            <a href="archive/index.html">全部记录</a>
-            <a href="roadmap/index.html">学习路线</a>
-          </div>
-          <button
-            class="theme-toggle"
-            type="button"
-            data-theme-toggle
-            aria-label="切换主题"
-          >
-            深色
-          </button>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="医学影像、多模态学习与计算生物学的学习记录。">
+  <meta name="color-scheme" content="light dark">
+  <title>研习手记</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%232563eb'/%3E%3Cpath d='M18 17h22a8 8 0 0 1 8 8v22H26a8 8 0 0 1-8-8V17Z' fill='none' stroke='white' stroke-width='5'/%3E%3Cpath d='M27 28h13M27 37h9' stroke='white' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header">
+    <nav class="nav" aria-label="主导航">
+      <a class="brand" href="index.html"><span class="brand-mark">记</span><span>研习手记</span></a>
+      <div class="nav-actions">
+        <div class="nav-links">
+          <a href="index.html" aria-current="page">首页</a>
+          <a href="archive/index.html">全部记录</a>
+          <a href="roadmap/index.html">学习路线</a>
         </div>
-      </nav>
-    </header>
-    <main id="main">
-      <div class="page-shell">
-        <section class="dashboard-grid" aria-labelledby="current-focus">
-          <div class="panel focus-panel">
-            <div class="focus-copy">
-              <p class="eyebrow">ELERMI的学习笔记</p>
-              <h1 id="current-focus">BioMedical 深度学习笔记</h1>
-              <p class="focus-note">正在学习和记录...</p>
-            </div>
-          </div>
-          <aside class="panel summary-panel" aria-label="学习概览">
-            <div class="summary-item">
-              伟大的作品靠的不是力量，而是靠着坚持来完成的。
-            </div>
-            <div class="aside-extra">
-              <span class="dot"></span>
-              每天都学一点
-            </div>
-            <div class="aside-extra">
-              <span class="dot"></span>
-              你的努力总能有回报的
-            </div>
-            <div class="aside-extra">
-              <span class="dot"></span>
-              转码之路...
-            </div>
-            <div class="aside-extra">
-              <span class="dot"></span>
-              今日状态: 缓慢推进中
-            </div>
-          </aside>
-        </section>
-        <section class="section" aria-labelledby="roadmap-heading">
-          <div class="section-heading">
-            <div>
-              <h2 id="roadmap-heading">学习路线</h2>
-              <p>一步一步慢慢完成...</p>
-            </div>
-            <a class="text-link" href="roadmap/index.html">查看说明 →</a>
-          </div>
-          <div class="roadmap-list">
-            <article class="panel roadmap-item current">
-              <span class="roadmap-index">01</span>
-              <h3>医学图像分类</h3>
-              <p class="roadmap-repo">MedMNIST</p>
-              <p class="roadmap-description">熟悉数据、训练、评估与错误分析</p>
-            </article>
-            <article class="panel roadmap-item todo">
-              <span class="roadmap-index">02</span>
-              <h3>三维医学影像</h3>
-              <p class="roadmap-repo">MONAI</p>
-              <p class="roadmap-description">理解 NIfTI、空间预处理与分割</p>
-            </article>
-            <article class="panel roadmap-item todo">
-              <span class="roadmap-index">03</span>
-              <h3>数字病理</h3>
-              <p class="roadmap-repo">CLAM</p>
-              <p class="roadmap-description">
-                学习全切片、多实例学习与特征聚合
-              </p>
-            </article>
-            <article class="panel roadmap-item todo">
-              <span class="roadmap-index">04</span>
-              <h3>影像与组学融合</h3>
-              <p class="roadmap-repo">MCAT</p>
-              <p class="roadmap-description">
-                比较单模态、简单融合与注意力融合
-              </p>
-            </article>
-            <article class="panel roadmap-item todo">
-              <span class="roadmap-index">05</span>
-              <h3>结构生物与分子模拟</h3>
-              <p class="roadmap-repo">后期方向</p>
-              <p class="roadmap-description">在具体课题明确后选择项目</p>
-            </article>
-          </div>
-        </section>
-        <section class="section" aria-labelledby="recent-heading">
-          <div class="section-heading">
-            <div>
-              <h2 id="recent-heading">最近记录</h2>
-              <p>写下做过的事，也保留没有解决的问题。</p>
-            </div>
-            <a class="text-link" href="archive/index.html">全部记录 →</a>
-          </div>
-          <div class="log-list">
-            <article class="panel log-card">
-              <time class="log-date" datetime="2026-09-23">2026-09-23</time>
-              <div>
-                <h3>
-                  <a href="logs/site-created/index.html">学习记录站点建立</a>
-                </h3>
-                <p class="log-summary">
-                  建立一个可以持续更新的静态学习日志，接下来从 MedMNIST 开始。
-                </p>
-              </div>
-              <div class="tags">
-                <span class="tag">网站</span><span class="tag">学习规划</span>
-              </div>
-            </article>
-          </div>
-        </section>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="切换主题">深色</button>
       </div>
-    </main>
-    <footer class="site-footer">
-      <div class="footer-inner">
-        <span>©️copyright at ElermiDefault</span
-        ><span>最后构建：2026-09-23</span>
+    </nav>
+  </header>
+  <main id="main"><div class="page-shell">
+  <section class="dashboard-grid" aria-labelledby="current-focus">
+    <div class="panel focus-panel">
+      <div class="focus-copy">
+        <p class="eyebrow">ELERMI的学习笔记</p>
+        <h1 id="current-focus">BioMedical 深度学习笔记</h1>
+        <p class="focus-note">正在学习和记录...</p>
       </div>
-    </footer>
-    <script src="assets/site.js"></script>
-  </body>
+    </div>
+    <aside class="panel summary-panel" aria-label="学习概览">
+      <div class="summary-item">伟大的作品靠的不是力量，而是靠着坚持来完成的。</div>
+      <div class="aside-extra"><span class="dot"></span>每天都学一点</div>
+<div class="aside-extra"><span class="dot"></span>你的努力总能有回报的</div>
+<div class="aside-extra"><span class="dot"></span>转码之路...</div>
+<div class="aside-extra"><span class="dot"></span>今日状态: 缓慢推进中</div>
+    </aside>
+  </section>
+  <section class="section" aria-labelledby="roadmap-heading">
+    <div class="section-heading"><div><h2 id="roadmap-heading">学习路线</h2><p>一步一步慢慢完成...</p></div><a class="text-link" href="roadmap/index.html">查看说明 →</a></div>
+    <div class="roadmap-list"><article class="panel roadmap-item current">
+  <span class="roadmap-index">01</span>
+  <h3>医学图像分类</h3>
+  <p class="roadmap-repo">MedMNIST</p>
+  <p class="roadmap-description">熟悉数据、训练、评估与错误分析</p>
+</article><article class="panel roadmap-item todo">
+  <span class="roadmap-index">02</span>
+  <h3>三维医学影像</h3>
+  <p class="roadmap-repo">MONAI</p>
+  <p class="roadmap-description">理解 NIfTI、空间预处理与分割</p>
+</article><article class="panel roadmap-item todo">
+  <span class="roadmap-index">03</span>
+  <h3>数字病理</h3>
+  <p class="roadmap-repo">CLAM</p>
+  <p class="roadmap-description">学习全切片、多实例学习与特征聚合</p>
+</article><article class="panel roadmap-item todo">
+  <span class="roadmap-index">04</span>
+  <h3>影像与组学融合</h3>
+  <p class="roadmap-repo">MCAT</p>
+  <p class="roadmap-description">比较单模态、简单融合与注意力融合</p>
+</article><article class="panel roadmap-item todo">
+  <span class="roadmap-index">05</span>
+  <h3>结构生物与分子模拟</h3>
+  <p class="roadmap-repo">后期方向</p>
+  <p class="roadmap-description">在具体课题明确后选择项目</p>
+</article></div>
+  </section>
+  <section class="section" aria-labelledby="recent-heading">
+    <div class="section-heading"><div><h2 id="recent-heading">最近记录</h2><p>写下做过的事，也保留没有解决的问题。</p></div><a class="text-link" href="archive/index.html">全部记录 →</a></div>
+    <div class="log-list"><article class="panel log-card">
+  <time class="log-date" datetime="2026-09-23">2026-09-23</time>
+  <div>
+    <h3><a href="logs/MedMNIST/index.html">A1：审计 PathMNIST</a></h3>
+    <p class="log-summary">本次学习到了病理影像数据集的形状，数据类型, 同时也学习和复习了Python的一些高级语法，尤其是Numpy</p>
+  </div>
+  <div class="tags"><span class="tag">病理影像</span><span class="tag">数据集</span><span class="tag">多分类</span><span class="tag">Python高级语法</span><span class="tag">Numpy</span></div>
+</article>
+<article class="panel log-card">
+  <time class="log-date" datetime="2026-09-23">2026-09-23</time>
+  <div>
+    <h3><a href="logs/site-created/index.html">学习记录站点建立</a></h3>
+    <p class="log-summary">建立一个可以持续更新的静态学习日志，接下来从 MedMNIST 开始。</p>
+  </div>
+  <div class="tags"><span class="tag">网站</span><span class="tag">学习规划</span></div>
+</article></div>
+  </section>
+</div></main>
+  <footer class="site-footer">
+    <div class="footer-inner"><span>©️copyright at ElermiDefault</span><span>最后构建：2026-09-23</span></div>
+  </footer>
+  <script src="assets/site.js"></script>
+</body>
 </html>
