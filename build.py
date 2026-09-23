@@ -194,13 +194,19 @@ def tags_html(tags: list[str]) -> str:
 
 
 def log_card(entry: dict, prefix: str = "") -> str:
+    entry_url = f"{prefix}logs/{html.escape(entry['slug'])}/index.html"
     return f"""<article class="panel log-card">
   <time class="log-date" datetime="{entry['date']}">{entry['date']}</time>
   <div>
-    <h3><a href="{prefix}logs/{html.escape(entry['slug'])}/index.html">{html.escape(entry['title'])}</a></h3>
+    <h3><a href="{entry_url}">{html.escape(entry['title'])}</a></h3>
     <p class="log-summary">{html.escape(entry['summary'])}</p>
   </div>
   <div class="tags">{tags_html(entry['tags_list'])}</div>
+  <details class="log-details">
+    <summary>查看完整记录</summary>
+    <div class="article-content log-details-content">{entry['body_html']}</div>
+    <a class="log-page-link" href="{entry_url}">打开独立页面 →</a>
+  </details>
 </article>"""
 
 

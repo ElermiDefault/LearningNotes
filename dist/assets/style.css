@@ -249,6 +249,13 @@ h3 { margin: 0; font-size: 1.15rem; }
 .log-summary { margin: 0.35rem 0 0; color: var(--muted); font-size: 0.93rem; line-height: 1.55; }
 .tags { display: flex; flex-wrap: wrap; gap: 0.35rem; justify-content: end; }
 .tag { padding: 0.2rem 0.55rem; border-radius: 999px; background: var(--accent-soft); color: var(--accent-strong); font-size: 0.76rem; }
+.log-details { grid-column: 1 / -1; padding-top: 0.85rem; border-top: 1px solid var(--line); }
+.log-details summary { width: fit-content; cursor: pointer; color: var(--accent-strong); font-weight: 700; }
+.log-details summary:hover { text-decoration: underline; text-underline-offset: 0.2em; }
+.log-details-content { margin-top: 1.25rem; }
+.log-details-content h2:first-child { margin-top: 0; }
+.log-page-link { display: inline-block; margin-top: 0.5rem; font-weight: 650; text-decoration: none; }
+.log-page-link:hover { text-decoration: underline; text-underline-offset: 0.2em; }
 
 .article-shell { max-width: 780px; }
 .article-header { margin-bottom: 2rem; padding-bottom: 1.6rem; border-bottom: 1px solid var(--line); }
