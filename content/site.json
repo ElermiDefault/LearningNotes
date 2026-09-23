@@ -1,0 +1,39 @@
+{
+  "title": "研习手记",
+  "owner": "Yifei",
+  "description": "医学影像、多模态学习与计算生物学的学习记录。",
+  "current_focus": "MedMNIST：医学图像分类入门",
+  "current_note": "先完成一个可复现的二维医学图像分类实验，再进入三维医学影像。",
+  "milestones": [
+    {
+      "title": "医学图像分类",
+      "repo": "MedMNIST",
+      "status": "current",
+      "description": "熟悉数据、训练、评估与错误分析"
+    },
+    {
+      "title": "三维医学影像",
+      "repo": "MONAI",
+      "status": "todo",
+      "description": "理解 NIfTI、空间预处理与分割"
+    },
+    {
+      "title": "数字病理",
+      "repo": "CLAM",
+      "status": "todo",
+      "description": "学习全切片、多实例学习与特征聚合"
+    },
+    {
+      "title": "影像与组学融合",
+      "repo": "MCAT",
+      "status": "todo",
+      "description": "比较单模态、简单融合与注意力融合"
+    },
+    {
+      "title": "结构生物与分子模拟",
+      "repo": "后期方向",
+      "status": "todo",
+      "description": "在具体课题明确后选择项目"
+    }
+  ]
+}

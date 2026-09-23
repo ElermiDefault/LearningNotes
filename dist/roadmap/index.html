@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="医学影像、多模态学习与计算生物学的学习记录。">
+  <meta name="color-scheme" content="light dark">
+  <title>学习路线 · 研习手记</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%232563eb'/%3E%3Cpath d='M18 17h22a8 8 0 0 1 8 8v22H26a8 8 0 0 1-8-8V17Z' fill='none' stroke='white' stroke-width='5'/%3E%3Cpath d='M27 28h13M27 37h9' stroke='white' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header">
+    <nav class="nav" aria-label="主导航">
+      <a class="brand" href="../index.html"><span class="brand-mark">记</span><span>研习手记</span></a>
+      <div class="nav-actions">
+        <div class="nav-links">
+          <a href="../index.html">首页</a>
+          <a href="../archive/index.html">全部记录</a>
+          <a href="../roadmap/index.html" aria-current="page">学习路线</a>
+        </div>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="切换主题">深色</button>
+      </div>
+    </nav>
+  </header>
+  <main id="main"><div class="page-shell article-shell"><article class="article-content"><h1>学习路线</h1>
+<p>这条路线按完成标准推进，不设固定周计划。每完成一个阶段，就留下能够复查的代码、结果和问题。</p>
+<h2>医学图像分类</h2>
+<p>从 <a href="https://github.com/MedMNIST/MedMNIST" target="_blank" rel="noreferrer">MedMNIST</a> 开始，完成数据检查、训练、验证、测试和错误分析。目标不是刷最高分，而是能解释实验结果的可信范围。</p>
+<h2>三维医学影像</h2>
+<p>使用 <a href="https://github.com/Project-MONAI/tutorials" target="_blank" rel="noreferrer">MONAI Tutorials</a> 学习 NIfTI、体素间距、方向、重采样、三维分割和滑窗推理。优先理解数据流程，再决定训练规模。</p>
+<h2>数字病理</h2>
+<p>通过 <a href="https://github.com/mahmoodlab/CLAM" target="_blank" rel="noreferrer">CLAM</a> 理解全切片图像、图块特征、多实例学习和切片级预测。区分患者数、切片数与图块数。</p>
+<h2>影像与组学融合</h2>
+<p>阅读 <a href="https://github.com/mahmoodlab/MCAT" target="_blank" rel="noreferrer">MCAT</a>，学习病理影像与组学特征的融合。正式比较时保持患者集合与数据划分一致，并设置影像、组学和简单融合基线。</p>
+<h2>后期方向</h2>
+<p>具体课题明确后，再选择结构预测或分子模拟路线。结构预测与分子动力学是不同问题，需要分别补充知识。</p></article></div></main>
+  <footer class="site-footer">
+    <div class="footer-inner"><span>研习手记 · 持续记录，定期复盘</span><span>最后构建：2026-09-23</span></div>
+  </footer>
+  <script src="../assets/site.js"></script>
+</body>
+</html>
